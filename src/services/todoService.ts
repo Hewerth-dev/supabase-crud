@@ -3,7 +3,6 @@ import { supabase } from "@/lib/supabaseClient";
 export async function getTasks() {
     const {data , error} = await supabase.from('tasks').select('*');
     if (error) throw error
-    console.log(data)
     return data
 } 
 export async function addTask(title: string) {
